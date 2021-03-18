@@ -11,7 +11,7 @@ class Gif extends Component {
     const { gifId } = this.props;
     const url = `https://media.giphy.com/media/${gifId}/giphy.gif`
     return (
-      <img src={url} alt="gif" className="gif" onClick={this.handleClick}/>
+      <img src={url} alt="gif" className="gif" onClick={this.handleClick} />
     );
   }
 }
