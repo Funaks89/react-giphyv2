@@ -25,6 +25,7 @@ import App from "./components/app";
 // }
 
 const root = document.getElementById("root");
+console.log(root)
 if (root) {
   ReactDOM.render(<App />, root);
 }
