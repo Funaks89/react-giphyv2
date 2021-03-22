@@ -26,22 +26,22 @@ class App extends Component {
       rating: 'g',
       limit: 10
     }, (err, res) => {
-      this.setState({ giIds: res.data.map(gif => gif.id) });
+      this.setState({ giIdList: res.data.map(gif => gif.id) });
     });
   }
 
   changeSelectGif = (newSelectedGifId) => {
-    this.setState({ gifIdSelected: newSelectedGifId });
+    this.setState({ gifId: newSelectedGifId });
   }
 
   render() {
-    const { gifIdSelected, gifIds } = this.state;
+    const { gifId, gifIds } = this.state;
       return (
       <div>
         <div className="left-scene">
           <SearchBar changeGifList={this.changeGifList} />
           <div className="selected-gif">
-            <Gif gifId={gifIdSelected}/>
+            <Gif gifId={gifId}/>
           </div>
         </div>
         <div className="right-scene">
@@ -107,4 +107,4 @@ class App extends Component {
 //     );
 //   }
 // }
-// export default App;
+export default App;
