@@ -45,7 +45,7 @@ class App extends Component {
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifIds={gifIds} changeSelectedGif={this.changeSelectGif}/>
+          <GifList gifIds={gifIds} changeSelectGif={this.changeSelectGif}/>
         </div>
       </div>
     );
