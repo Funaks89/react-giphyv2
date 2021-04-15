@@ -27,6 +27,7 @@ class App extends Component {
       limit: 10
     }, (err, res) => {
       this.setState({ giIdList: res.data.map(gif => gif.id) });
+      console.log(this.changeGifList)
     });
   }
 
