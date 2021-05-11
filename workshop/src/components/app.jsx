@@ -5,8 +5,8 @@ import GifList from "./gifList";
 import Gif from "./gif";
 
 const giphy = require('giphy-api')({
-  apiKey: 'bGNJXfLJZhVre7l2mGS5vT6FRW4OcIoW',
-  // apiKey: 'KsltJNEs1v3QDDVlinP6EFo2GqjFxgRR',
+  // apiKey: 'bGNJXfLJZhVre7l2mGS5vT6FRW4OcIoW',
+  apiKey: 'KsltJNEs1v3QDDVlinP6EFo2GqjFxgRR',
   https: true
 });
 // eslint-disable-next-line react/prefer-stateless-function
@@ -14,22 +14,22 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gifIds: ["WuGSL4LFUMQU", "HuVCpmfKheI2Q", "u6uAu3yyDNqRq"],
+      gifIds: [],
       gifId: "WuGSL4LFUMQU"
     };
     this.changeGifList("tokyo");
   }
-
   changeGifList = (keyword) => {
     giphy.search({
       q: keyword,
       rating: 'g',
       limit: 10
     }, (err, res) => {
-      this.setState({ giIdList: res.data.map(gif => gif.id) });
-      console.log(this.changeGifList)
+      this.setState({ gifIds: res.data.map((gif) => gif.id) });
+      // console.log(this.changeGifList)
     });
   }
+
 
   changeSelectGif = (newSelectedGifId) => {
     this.setState({ gifId: newSelectedGifId });

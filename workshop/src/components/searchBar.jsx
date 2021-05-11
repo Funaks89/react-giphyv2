@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
+  shouldComponentUpdate() {
+    return false;
+  }
   handleChange = (event) => {
     const { changeGifList } = this.props;
     changeGifList(event.currentTarget.value); 
